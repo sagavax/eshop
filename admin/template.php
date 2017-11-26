@@ -1,5 +1,5 @@
 <?php session_start(); ?>
-<?php include("../include/dbconnect.php"); ?>
+<?php include("include/dbconnect.php"); ?>
 
 
 <!DOCTYPE HTML>
@@ -10,22 +10,14 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <link rel='shortcut icon' href='images/w.png'>
     <link href="../css/style.css" rel="stylesheet" type="text/css" />
-    <title>Eshop - admin</title>
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
-    <link rel="shortcut icon" href="../shopping_cart.ico">
+    <title>Eshop</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     
 <body>
 	<header>
 		<section class="logo"></section><section class="basket"><a href="basket.php">Kosik</a></section>
 	</header>
 	<div id="middle_column">
-        <div id="left_bar">
-            <?php include "left_menu.php" ?>
-        </div>
-        <div id="content">
-            
-        </div>
-        
-    </div>
+		
+	</div>
 	<footer></footer>
-</body>    
