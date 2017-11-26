@@ -17,24 +17,22 @@
 
 // --- Connect to DB, retry 5 times ---
 for ($i = 0; $i < 5; $i++) {
-	
-    $db = mysql_connect("$dbserver", "$dbuser", "$dbpass");
-    $errno = mysql_errno();
-    if ($errno == 1040 || $errno == 1226 || $errno == 1203) {
-        sleep(1);
-    }  else {
-        break;
-    }
+  
+    $link = mysqli_connect("$dbserver", "$dbuser", "$dbpass");
+   
 }
-mysql_select_db("$dbname", $db);
+
+global $link;
+
+mysqli_select_db($link, $dbname);
 
 //
 // Setup the UTF-8 parameters:
 // * http://www.phpforum.de/forum/showthread.php?t=217877#PHP
 //
 // header('Content-type: text/html; charset=utf-8');
-mysql_query('set character set utf8;');
-mysql_query("SET NAMES `utf8`");
+mysqli_query($link, "set character set `utf8`");
+mysqli_query($link, "SET NAMES `utf8`");
 
 
 ?>

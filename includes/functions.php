@@ -32,29 +32,3 @@
         return $out;
     }
 
- function create_invoice($order_id) {
-  
- }
-
- function GetCatdescr($cat_id) {
-  $sql="SELECT category_description from product_categories where cat_id=$cat_id";
-  //echo $sql;
-  $result=mysql_query($sql) or die("MySQL ERROR: ".mysql_error());
-                                while ($row = mysql_fetch_array($result)) {
-                                  $cat_description=$row['category_description'];
-                                }  
-     return $cat_description;                           
- } 
-
-function IsRegistered($session_id) {
-  $sql="SELECT count(*) as yesno from users where user_id='$session_id'";
-  $result=mysql_query($sql) or die("MySQL ERROR: ".mysql_error());
-  $row = mysql_fetch_array($result);
-  if($row['yesno']==0){
-    $IsRegistered=FALSE;
-  } else {
-    $IsRegistered=TRUE;
-  }
-  return $IsRegistered;
-
-}
